@@ -1,0 +1,394 @@
+/* Workshops List Page Styles */
+
+.workshops-header {
+    padding: var(--spacing-2xl) 0 var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(33, 56, 81, 0.08) 0%, rgba(161, 124, 26, 0.08) 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header-with-back {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1rem;
+    background: var(--surface-color);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-base);
+    text-decoration: none;
+    width: fit-content;
+}
+
+.btn-back:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: rgba(33, 56, 81, 0.05);
+    transform: translateX(4px);
+}
+
+.btn-back svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+}
+
+.category-badge {
+    width: 90px;
+    height: 90px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: var(--radius-2xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-xl);
+    flex-shrink: 0;
+    position: relative;
+    color: white;
+}
+
+.category-badge svg {
+    width: 48px;
+    height: 48px;
+}
+
+.category-badge::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: var(--radius-2xl);
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Filters Section */
+.filters-section {
+    padding: var(--spacing-lg) 0;
+    background: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 70px;
+    z-index: 10;
+}
+
+.filters-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.search-filter {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 0.75rem 1rem;
+    background: var(--bg-color);
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-base);
+}
+
+.search-filter:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(33, 56, 81, 0.1);
+}
+
+.search-filter svg {
+    color: var(--text-secondary);
+    flex-shrink: 0;
+}
+
+.search-filter input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+}
+
+.filter-select {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    background: var(--surface-color);
+    border-radius: var(--radius-lg);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-base);
+    outline: none;
+    min-width: 150px;
+    color: var(--text-primary);
+}
+
+.filter-select:hover {
+    border-color: var(--primary-color);
+}
+
+.filter-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(33, 56, 81, 0.1);
+}
+
+/* Workshops Section */
+.workshops-section {
+    padding: var(--spacing-2xl) 0;
+    background: var(--bg-color);
+    min-height: 60vh;
+}
+
+.workshops-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.workshop-card {
+    background: var(--surface-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-base);
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+}
+
+.workshop-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.workshop-image {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(33, 56, 81, 0.1) 0%, rgba(161, 124, 26, 0.1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.workshop-icon {
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.workshop-icon svg {
+    width: 64px;
+    height: 64px;
+}
+
+.workshop-badge {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    padding: 0.375rem 0.75rem;
+    background: var(--surface-color);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    box-shadow: var(--shadow-sm);
+}
+
+.workshop-badge.free {
+    color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.workshop-badge.paid {
+    color: var(--primary-color);
+    background: rgba(33, 56, 81, 0.1);
+}
+
+.workshop-content {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    flex: 1;
+}
+
+.workshop-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.workshop-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.workshop-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: var(--spacing-sm);
+    border-top: 1px solid var(--border-color);
+}
+
+.workshop-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.workshop-meta-item svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.workshop-footer {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--border-color);
+}
+
+.workshop-price {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.workshop-price.free {
+    color: #10b981;
+}
+
+.btn-register {
+    padding: 0.5rem 1.25rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border-radius: var(--radius-lg);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-base);
+}
+
+.btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-colored);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .workshops-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .workshops-header {
+        padding: var(--spacing-xl) 0 var(--spacing-lg);
+    }
+    
+    .filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--spacing-sm);
+    }
+    
+    .search-filter {
+        min-width: 100%;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .filter-select {
+        width: 100%;
+    }
+    
+    .workshops-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .header-content {
+        gap: var(--spacing-lg);
+    }
+    
+    .category-badge {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .category-badge svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    .page-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .btn-back {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.875rem;
+    }
+}

@@ -1,0 +1,472 @@
+/* Auth Pages Styles */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    padding: 3rem var(--spacing-xl);
+    position: relative;
+}
+
+.auth-page::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 680px;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-card {
+    background: var(--surface-color);
+    border-radius: var(--radius-2xl);
+    padding: 2.5rem 3rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+
+.auth-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    transition: var(--transition-base);
+    text-decoration: none;
+}
+
+.auth-back-link:hover {
+    color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+.auth-back-link svg {
+    transition: var(--transition-base);
+}
+
+.auth-back-link:hover svg {
+    transform: translateX(3px);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-logo h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+    letter-spacing: -1px;
+}
+
+.auth-header h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+}
+
+.auth-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.auth-form {
+    margin-bottom: 1.75rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.85rem;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    font-size: 0.9rem;
+    transition: var(--transition-base);
+    background: var(--bg-color);
+    font-family: 'Tajawal', sans-serif;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(33, 56, 81, 0.1);
+    background: white;
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+/* Account Type Selection */
+.account-type-section {
+    margin-bottom: 2rem;
+}
+
+.section-label {
+    display: block;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.account-type-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.account-type-card {
+    padding: 1.5rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--bg-color);
+}
+
+.account-type-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 56, 81, 0.15);
+}
+
+.account-type-card.active {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(33, 56, 81, 0.1) 0%, rgba(161, 124, 26, 0.1) 100%);
+    box-shadow: 0 4px 12px rgba(33, 56, 81, 0.2);
+}
+
+.account-type-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: linear-gradient(135deg, rgba(33, 56, 81, 0.1) 0%, rgba(161, 124, 26, 0.1) 100%);
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.account-type-card.active .account-type-icon {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+}
+
+.account-type-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.account-type-card p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Form Sections */
+.form-section {
+    transition: all 0.3s ease;
+}
+
+.form-section.hidden {
+    display: none;
+}
+
+.section-divider {
+    text-align: center;
+    margin: 2rem 0 1.5rem;
+    position: relative;
+}
+
+.section-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.section-divider span {
+    position: relative;
+    background: var(--surface-color);
+    padding: 0 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.85rem;
+}
+
+/* File Upload */
+.file-upload-area {
+    margin-top: 0.5rem;
+}
+
+.file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: var(--transition-base);
+    background: var(--bg-color);
+    color: var(--text-secondary);
+}
+
+.file-upload-label:hover {
+    border-color: var(--primary-color);
+    background: rgba(33, 56, 81, 0.05);
+    color: var(--primary-color);
+}
+
+.file-upload-label svg {
+    color: var(--primary-color);
+}
+
+.file-upload-label span {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.file-name {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.file-name:not(:empty) {
+    padding: 0.5rem;
+    background: rgba(33, 56, 81, 0.1);
+    border-radius: var(--radius-md);
+    color: var(--primary-color);
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    font-size: 0.9rem;
+    font-family: 'Tajawal', sans-serif;
+    resize: vertical;
+    min-height: 80px;
+    transition: var(--transition-base);
+    background: var(--bg-color);
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(33, 56, 81, 0.1);
+    background: white;
+}
+
+textarea::placeholder {
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.checkbox-label input {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary-color);
+}
+
+.checkbox-label span {
+    user-select: none;
+}
+
+.link {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: var(--transition-fast);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.btn-block {
+    width: 100%;
+    padding: 0.95rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 12px rgba(33, 56, 81, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-block:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(33, 56, 81, 0.4);
+}
+
+.btn-block:active {
+    transform: translateY(0);
+}
+
+.auth-footer {
+    text-align: center;
+    padding-top: 1.75rem;
+    border-top: 2px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.auth-footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .auth-container {
+        max-width: 100%;
+    }
+    
+    .auth-card {
+        padding: 2rem 1.75rem;
+    }
+    
+    .auth-logo h1 {
+        font-size: 2rem;
+    }
+    
+    .auth-header h2 {
+        font-size: 1.35rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .account-type-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-page {
+        padding: var(--spacing-md);
+    }
+    
+    .auth-card {
+        padding: 1.75rem 1.25rem;
+    }
+    
+    .auth-logo h1 {
+        font-size: 1.75rem;
+    }
+    
+    .auth-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    .auth-header p {
+        font-size: 0.85rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 0.75rem 0.85rem;
+        font-size: 0.85rem;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn-block {
+        padding: 0.85rem;
+        font-size: 0.9rem;
+    }
+    
+    .account-type-card {
+        padding: 1.25rem 0.85rem;
+    }
+    
+    .account-type-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .account-type-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+}
