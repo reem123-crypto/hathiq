@@ -1,0 +1,355 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - حاذق</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>حاذق</h1></a>
+                </div>
+                
+                <nav class="header-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="talents.html" data-ar="المواهب" data-en="Talents">المواهب</a></li>
+                        <li><a href="store.html" data-ar="المتجر" data-en="Store">المتجر</a></li>
+                        <li><a href="workshops.html" data-ar="الورش" data-en="Workshops">الورش</a></li>
+                        <li><a href="community.html" data-ar="المجتمع" data-en="Community">المجتمع</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="lang-toggle" id="langToggle">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="lang-text">EN</span>
+                    </button>
+                    <a href="notifications.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge" id="headerNotificationBadge" style="display: none;">0</span>
+                    </a>
+                    <a href="chat.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </a>
+                    <a href="dashboard.html" class="icon-btn active">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <button class="menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <h2 data-ar="القائمة" data-en="Menu">القائمة</h2>
+            <button class="mobile-menu-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+                <span data-ar="الرئيسية" data-en="Home">الرئيسية</span>
+            </a>
+            <a href="dashboard.html" class="nav-link active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                    <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                    <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                    <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+                </svg>
+                <span data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</span>
+            </a>
+            <a href="profile.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <span data-ar="ملفي الشخصي" data-en="My Profile">ملفي الشخصي</span>
+            </a>
+        </nav>
+        <div class="menu-actions">
+            <a href="index.html" class="btn btn-outline" data-ar="تسجيل الخروج" data-en="Logout">تسجيل الخروج</a>
+        </div>
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-wrapper">
+        <div class="container">
+            <!-- Welcome Section -->
+            <div class="welcome-section">
+                <div class="welcome-content">
+                    <h1 data-ar="مرحباً، أحمد المعمري" data-en="Welcome, Ahmed Al-Maamari">مرحباً، أحمد المعمري</h1>
+                    <p data-ar="إليك نظرة عامة على نشاطك وإحصائياتك" data-en="Here's an overview of your activity and statistics">إليك نظرة عامة على نشاطك وإحصائياتك</p>
+                </div>
+                <div class="welcome-actions">
+                    <a href="profile.html" class="btn btn-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span data-ar="عرض الملف العام" data-en="View Public Profile">عرض الملف العام</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(33, 56, 81, 0.1); color: #213851;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3 data-ar="زوار الملف" data-en="Profile Views">زوار الملف</h3>
+                        <p class="stat-number">1,234</p>
+                        <span class="stat-change positive">+12% هذا الشهر</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(161, 124, 26, 0.1); color: #ec4899;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3 data-ar="الطلبات" data-en="Requests">الطلبات</h3>
+                        <p class="stat-number">23</p>
+                        <span class="stat-change positive">+5 جديد</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3 data-ar="التقييم" data-en="Rating">التقييم</h3>
+                        <p class="stat-number">4.8</p>
+                        <span class="stat-change">من 45 تقييم</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3 data-ar="المشاريع المكتملة" data-en="Completed Projects">المشاريع المكتملة</h3>
+                        <p class="stat-number">67</p>
+                        <span class="stat-change positive">+3 هذا الأسبوع</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="dashboard-grid">
+                <!-- Left Column -->
+                <div class="dashboard-main">
+                    <!-- Portfolio Section -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2 data-ar="ملف الأعمال" data-en="Portfolio">ملف الأعمال</h2>
+                            <button class="btn btn-outline btn-sm" id="addWorkBtn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 5v14M5 12h14"></path>
+                                </svg>
+                                <span data-ar="إضافة عمل" data-en="Add Work">إضافة عمل</span>
+                            </button>
+                        </div>
+                        <div class="portfolio-grid" id="portfolioGrid">
+                            <!-- Portfolio items will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Store Products Section -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2 data-ar="منتجات المتجر" data-en="Store Products">منتجات المتجر</h2>
+                            <button class="btn btn-outline btn-sm" id="addProductBtn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 5v14M5 12h14"></path>
+                                </svg>
+                                <span data-ar="إضافة منتج" data-en="Add Product">إضافة منتج</span>
+                            </button>
+                        </div>
+                        <div class="products-grid" id="productsGrid">
+                            <!-- Products will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Workshops Attended -->
+                    <div class="dashboard-section">
+                        <div class="section-header">
+                            <h2 data-ar="الورش التي حضرتها" data-en="Workshops Attended">الورش التي حضرتها</h2>
+                            <a href="workshops.html" class="btn btn-text btn-sm" data-ar="تصفح المزيد" data-en="Browse More">تصفح المزيد</a>
+                        </div>
+                        <div class="workshops-list" id="workshopsList">
+                            <!-- Workshops will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar -->
+                <aside class="dashboard-sidebar">
+                    <!-- Quick Actions -->
+                    <div class="sidebar-card">
+                        <h3 data-ar="إجراءات سريعة" data-en="Quick Actions">إجراءات سريعة</h3>
+                        <div class="quick-actions">
+                            <a href="profile.html" class="quick-action-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                </svg>
+                                <span data-ar="تعديل الملف الشخصي" data-en="Edit Profile">تعديل الملف الشخصي</span>
+                            </a>
+                            <a href="chat.html" class="quick-action-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                </svg>
+                                <span data-ar="الرسائل" data-en="Messages">الرسائل</span>
+                            </a>
+                            <a href="community.html" class="quick-action-btn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <span data-ar="المجتمع" data-en="Community">المجتمع</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="sidebar-card">
+                        <h3 data-ar="النشاط الأخير" data-en="Recent Activity">النشاط الأخير</h3>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="activity-content">
+                                    <p data-ar="زار فاطمة الحارثية ملفك الشخصي" data-en="Fatima visited your profile">زار فاطمة الحارثية ملفك الشخصي</p>
+                                    <span>منذ ساعتين</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                    </svg>
+                                </div>
+                                <div class="activity-content">
+                                    <p data-ar="حصلت على تقييم 5 نجوم من سالم" data-en="Received 5-star rating from Salem">حصلت على تقييم 5 نجوم من سالم</p>
+                                    <span>منذ 5 ساعات</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="activity-content">
+                                    <p data-ar="رسالة جديدة من خالد الهنائي" data-en="New message from Khalid">رسالة جديدة من خالد الهنائي</p>
+                                    <span>أمس</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Profile Completion -->
+                    <div class="sidebar-card">
+                        <h3 data-ar="اكتمال الملف الشخصي" data-en="Profile Completion">اكتمال الملف الشخصي</h3>
+                        <div class="progress-section">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                            <p class="progress-text">85% مكتمل</p>
+                        </div>
+                        <ul class="completion-list">
+                            <li class="completed">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span data-ar="المعلومات الأساسية" data-en="Basic Information">المعلومات الأساسية</span>
+                            </li>
+                            <li class="completed">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                                <span data-ar="ملف الأعمال" data-en="Portfolio">ملف الأعمال</span>
+                            </li>
+                            <li class="pending">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                </svg>
+                                <span data-ar="إضافة منتجات للمتجر" data-en="Add Store Products">إضافة منتجات للمتجر</span>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/footer-loader.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script>
+        // Load footer component
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

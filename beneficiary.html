@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحة المستفيد - حاذق</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/beneficiary.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>حاذق</h1></a>
+                </div>
+
+                <nav class="header-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="talents.html" data-ar="المواهب" data-en="Talents">المواهب</a></li>
+                        <li><a href="store.html" data-ar="المتجر" data-en="Store">المتجر</a></li>
+                        <li><a href="workshops.html" data-ar="الورش" data-en="Workshops">الورش</a></li>
+                        <li><a href="community.html" data-ar="المجتمع" data-en="Community">المجتمع</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="lang-toggle" id="langToggle">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="lang-text">EN</span>
+                    </button>
+                    <a href="notifications.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge" id="headerNotificationBadge" style="display: none;">0</span>
+                    </a>
+                    <a href="chat.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </a>
+                    <a href="login.html" class="btn btn-outline" data-ar="تسجيل الدخول" data-en="Login">تسجيل الدخول</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <h2 data-ar="القائمة" data-en="Menu">القائمة</h2>
+            <button class="mobile-menu-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+                <span data-ar="الرئيسية" data-en="Home">الرئيسية</span>
+            </a>
+            <a href="talents.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span data-ar="المواهب" data-en="Talents">المواهب</span>
+            </a>
+            <a href="store.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span data-ar="المتجر" data-en="Store">المتجر</a>
+            </a>
+            <a href="workshops.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                <span data-ar="الورش" data-en="Workshops">الورش</span>
+            </a>
+            <a href="community.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span data-ar="المجتمع" data-en="Community">المجتمع</span>
+            </a>
+        </nav>
+        <div class="menu-actions">
+            <a href="login.html" class="btn btn-outline" data-ar="تسجيل الدخول" data-en="Login">تسجيل الدخول</a>
+            <a href="register.html" class="btn btn-primary" data-ar="انضم كموهوب" data-en="Join">انضم كموهوب</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-ar="صفحة المستفيد" data-en="Beneficiary Page">صفحة المستفيد</h1>
+            <p class="page-subtitle" data-ar="استكشف المنصة وتعرف على الخدمات المتاحة" data-en="Explore the platform and discover available services">استكشف المنصة وتعرف على الخدمات المتاحة</p>
+        </div>
+    </section>
+
+    <!-- Quick Access Section -->
+    <section class="quick-access-section">
+        <div class="container">
+            <div class="quick-access-grid">
+                <div class="access-card">
+                    <div class="access-icon">🎭</div>
+                    <h3>المواهب</h3>
+                    <p>تصفح المواهب العمانية في مختلف المجالات</p>
+                    <a href="talents.html" class="btn btn-primary">استكشف المواهب</a>
+                </div>
+
+                <div class="access-card">
+                    <div class="access-icon">🎓</div>
+                    <h3>الورش التدريبية</h3>
+                    <p>تعلم مهارات جديدة من محترفين عمانيين</p>
+                    <a href="workshops.html" class="btn btn-primary">استكشف الورش</a>
+                </div>
+
+                <div class="access-card">
+                    <div class="access-icon">🛒</div>
+                    <h3>المتجر</h3>
+                    <p>تسوق المنتجات والخدمات الرقمية</p>
+                    <a href="store.html" class="btn btn-primary">زور المتجر</a>
+                </div>
+
+                <div class="access-card">
+                    <div class="access-icon">👥</div>
+                    <h3>المجتمع</h3>
+                    <p>انضم للمجتمع وتفاعل مع الآخرين</p>
+                    <a href="community.html" class="btn btn-primary">انضم للمجتمع</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Talents Section -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">مواهب مميزة</h2>
+            <div class="featured-talents" id="featuredTalents">
+                <!-- Featured talents will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Workshops Section -->
+    <section class="workshops-preview-section">
+        <div class="container">
+            <h2 class="section-title">ورش قادمة</h2>
+            <div class="workshops-preview" id="upcomingWorkshops">
+                <!-- Upcoming workshops will be loaded here -->
+            </div>
+            <div class="view-all">
+                <a href="workshops.html" class="btn btn-outline">عرض جميع الورش</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Preview Section -->
+    <section class="community-preview-section">
+        <div class="container">
+            <h2 class="section-title">من المجتمع</h2>
+            <div class="community-posts" id="communityPosts">
+                <!-- Community posts preview will be loaded here -->
+            </div>
+            <div class="view-all">
+                <a href="community.html" class="btn btn-outline">زور المجتمع</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/footer-loader.js"></script>
+    <script src="js/beneficiary.js"></script>
+    <script>
+        // Load footer component
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

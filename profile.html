@@ -1,0 +1,757 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي - حاذق</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>حاذق</h1></a>
+                </div>
+                
+                <nav class="header-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="talents.html" data-ar="المواهب" data-en="Talents">المواهب</a></li>
+                        <li><a href="store.html" data-ar="المتجر" data-en="Store">المتجر</a></li>
+                        <li><a href="workshops.html" data-ar="الورش" data-en="Workshops">الورش</a></li>
+                        <li><a href="community.html" data-ar="المجتمع" data-en="Community">المجتمع</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="lang-toggle" id="langToggle">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="lang-text">EN</span>
+                    </button>
+                    <a href="notifications.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge" id="headerNotificationBadge" style="display: none;">0</span>
+                    </a>
+                    <a href="chat.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </a>
+                    <a href="my-profile.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <button class="menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <h2 data-ar="القائمة" data-en="Menu">القائمة</h2>
+            <button class="mobile-menu-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+                <span data-ar="الرئيسية" data-en="Home">الرئيسية</span>
+            </a>
+            <a href="talents.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                    <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+                    <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                </svg>
+                <span data-ar="المجالات" data-en="Fields">المجالات</span>
+            </a>
+            <a href="store.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                <span data-ar="المتجر" data-en="Store">المتجر</span>
+            </a>
+            <a href="ads.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                    <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                    <line x1="6" y1="1" x2="6" y2="4"></line>
+                    <line x1="10" y1="1" x2="10" y2="4"></line>
+                    <line x1="14" y1="1" x2="14" y2="4"></line>
+                </svg>
+                <span data-ar="الإعلانات" data-en="Ads">الإعلانات</span>
+            </a>
+            <a href="orders.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+                <span data-ar="الطلبات" data-en="Orders">الطلبات</span>
+            </a>
+        </nav>
+        <div class="menu-actions">
+            <a href="login.html" class="btn btn-outline" data-ar="تسجيل الدخول" data-en="Login">تسجيل الدخول</a>
+            <a href="register.html" class="btn btn-primary" data-ar="انضم كموهوب" data-en="Join">انضم كموهوب</a>
+        </div>
+    </div>
+
+    <!-- Profile Hero -->
+    <section class="profile-hero">
+        <div class="container">
+            <a href="talents-list.html" class="btn-back-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+            </a>
+            <div class="profile-header-new">
+                <!-- Avatar -->
+                <div class="profile-avatar-large">
+                    <div class="avatar-placeholder" id="profileAvatar">👤</div>
+                    <div class="verified-badge-large">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                
+                <!-- Info Section -->
+                <div class="profile-info-section">
+                    <div class="profile-name-category">
+                        <h1 class="profile-name" id="profileName">أحمد المعمري</h1>
+                        <span class="profile-category" id="profileCategory">التصوير</span>
+                        <div class="profile-location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span id="profileCity">مسقط</span>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-bio-rating">
+                        <p class="profile-bio" id="profileBio">أحول اللحظات العادية إلى ذكريات استثنائية من خلال عدستي. متخصص في التصوير الفوتوغرافي الاحترافي للمناسبات والمنتجات</p>
+                        
+                        <div class="profile-rating-actions">
+                            <div class="profile-rating">
+                                <div class="stars" id="profileStars"></div>
+                                <span class="rating-value" id="profileRating">4.8</span>
+                                <span class="rating-count">(<span id="reviewsCount">45</span> تقييم)</span>
+                            </div>
+                            
+                            <div class="profile-quick-actions">
+                                <button class="btn btn-primary btn-icon-text" id="chatBtn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                    <span data-ar="محادثة" data-en="Chat">محادثة</span>
+                                </button>
+                                <button class="btn btn-secondary btn-icon-text" id="requestBtn">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                                    </svg>
+                                    <span data-ar="إرسال طلب" data-en="Send Request">إرسال طلب</span>
+                                </button>
+                                <button class="btn-icon" id="favoriteBtn" title="إضافة للمفضلة">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                    </svg>
+                                </button>
+                                <button class="btn-icon" id="shareBtn" title="مشاركة">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="18" cy="5" r="3"></circle>
+                                        <circle cx="6" cy="12" r="3"></circle>
+                                        <circle cx="18" cy="19" r="3"></circle>
+                                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="profile-content">
+        <div class="container">
+            <!-- Stats Section -->
+            <div class="profile-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="9" y1="9" x2="15" y2="15"></line>
+                            <line x1="15" y1="9" x2="9" y2="15"></line>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="completedProjects">120</span>
+                        <span class="stat-label" data-ar="مشروع منجز" data-en="Completed">مشروع منجز</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="yearsExperience">5+</span>
+                        <span class="stat-label" data-ar="سنوات خبرة" data-en="Years">سنوات خبرة</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-value" id="workType" data-ar="فرد" data-en="Individual">فرد</span>
+                        <span class="stat-label" data-ar="نوع العمل" data-en="Type">نوع العمل</span>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-content">
+                        <span class="stat-value">98%</span>
+                        <span class="stat-label" data-ar="نسبة الرضا" data-en="Satisfaction">نسبة الرضا</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collapsible-sections">
+                <!-- Portfolio Section -->
+                <div class="collapsible-section">
+                    <button class="section-toggle" data-section="portfolio">
+                        <div class="section-toggle-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="3" x2="9" y2="21"></line>
+                            </svg>
+                            <h2 data-ar="الأعمال" data-en="Portfolio">الأعمال</h2>
+                        </div>
+                        <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="section-content" id="portfolio-content">
+                        <div class="portfolio-filters">
+                            <button class="filter-btn active" data-filter="all" data-ar="الكل" data-en="All">الكل</button>
+                            <button class="filter-btn" data-filter="photos" data-ar="صور" data-en="Photos">صور</button>
+                            <button class="filter-btn" data-filter="videos" data-ar="فيديو" data-en="Videos">فيديو</button>
+                        </div>
+                        <div class="portfolio-grid" id="portfolioGrid">
+                            <!-- Portfolio items will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Section -->
+                <div class="collapsible-section">
+                    <button class="section-toggle" data-section="experience">
+                        <div class="section-toggle-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                            </svg>
+                            <h2 data-ar="الخبرات" data-en="Experience">الخبرات</h2>
+                        </div>
+                        <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="section-content" id="experience-content">
+                        <div class="experience-list" id="experienceList">
+                            <!-- Experience items will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reviews Section -->
+                <div class="collapsible-section">
+                    <button class="section-toggle" data-section="reviews">
+                        <div class="section-toggle-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                            <h2 data-ar="التقييمات" data-en="Reviews">التقييمات</h2>
+                        </div>
+                        <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="section-content" id="reviews-content">
+                        <div class="reviews-summary">
+                            <div class="reviews-score">
+                                <div class="score-number">4.8</div>
+                                <div class="stars-large" id="reviewStarsLarge"></div>
+                                <div class="reviews-total">45 تقييم</div>
+                            </div>
+                            <div class="reviews-breakdown">
+                                <div class="rating-bar">
+                                    <span>5 نجوم</span>
+                                    <div class="bar"><div class="fill" style="width: 80%"></div></div>
+                                    <span>36</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>4 نجوم</span>
+                                    <div class="bar"><div class="fill" style="width: 15%"></div></div>
+                                    <span>7</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>3 نجوم</span>
+                                    <div class="bar"><div class="fill" style="width: 5%"></div></div>
+                                    <span>2</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>2 نجوم</span>
+                                    <div class="bar"><div class="fill" style="width: 0%"></div></div>
+                                    <span>0</span>
+                                </div>
+                                <div class="rating-bar">
+                                    <span>1 نجمة</span>
+                                    <div class="bar"><div class="fill" style="width: 0%"></div></div>
+                                    <span>0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-list" id="reviewsList">
+                            <!-- Reviews will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="collapsible-section">
+                    <button class="section-toggle" data-section="contact">
+                        <div class="section-toggle-header">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                            <h2 data-ar="معلومات التواصل" data-en="Contact">معلومات التواصل</h2>
+                        </div>
+                        <svg class="toggle-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="section-content" id="contact-content">
+                        <div class="contact-list">
+                            <a href="#" class="contact-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                </svg>
+                                <span>واتساب</span>
+                            </a>
+                            <a href="#" class="contact-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                <span>البريد الإلكتروني</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+
+        <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/appwrite-helper.js"></script>
+    <script>
+        // Load profile data from Appwrite
+        async function loadProfileData() {
+            try {
+                // Get user ID from URL parameters
+                const urlParams = new URLSearchParams(window.location.search);
+                const userId = urlParams.get('id');
+                
+                let profileData = null;
+                let isOwnProfile = false;
+                
+                if (userId && window.AppwriteHelper) {
+                    // Load specific user's profile
+                    const userDoc = await window.AppwriteHelper.getDocument('users', userId);
+                    if (userDoc) {
+                        profileData = userDoc;
+                    }
+                } else {
+                    // Load current user's profile
+                    const currentUser = await window.getSiteCurrentUserFromAppwrite();
+                    if (currentUser && currentUser.profileId) {
+                        const userDoc = await window.AppwriteHelper.getDocument('users', currentUser.profileId);
+                        if (userDoc) {
+                            profileData = userDoc;
+                            isOwnProfile = true;
+                        }
+                    }
+                }
+                
+                if (profileData) {
+                    // Update profile information
+                    document.getElementById('profileName').textContent = `${profileData.name || 'مستخدم'}`;
+                    document.getElementById('profileCategory').textContent = profileData.category || (profileData.type === 'admin' ? 'أدمن' : 'مستخدم');
+                    document.getElementById('profileCity').textContent = profileData.city || 'غير محدد';
+                    document.getElementById('profileBio').textContent = profileData.bio || 'هذا الملف مُنشأ تلقائياً. يمكنك تحديث بياناتك في أي وقت.';
+                    document.getElementById('profileAvatar').textContent = profileData.avatar || profileData.name?.charAt(0) || '👤';
+                    
+                    // Update stats
+                    document.getElementById('completedProjects').textContent = profileData.projects_completed || '0';
+                    document.getElementById('yearsExperience').textContent = profileData.experience ? `${profileData.experience}+` : '0+';
+                    document.getElementById('workType').textContent = profileData.type === 'talent' ? 'فرد' : 'عميل';
+                    
+                    // Update rating if available
+                    if (profileData.rating) {
+                        document.getElementById('profileRating').textContent = profileData.rating;
+                        document.getElementById('reviewsCount').textContent = profileData.reviews_count || '0';
+                        // Update stars display
+                        updateStarsDisplay('profileStars', profileData.rating);
+                        updateStarsDisplay('reviewStarsLarge', profileData.rating);
+                    }
+                    
+                    // Update contact information
+                    const contactList = document.querySelector('.contact-list');
+                    if (contactList && profileData.phone) {
+                        const whatsappLink = contactList.querySelector('a[href*="#"]');
+                        if (whatsappLink) {
+                            whatsappLink.href = `https://wa.me/${profileData.phone.replace(/\D/g, '')}`;
+                        }
+                    }
+                    
+                    // Update verified badge
+                    const verifiedBadge = document.querySelector('.verified-badge-large');
+                    if (verifiedBadge) {
+                        verifiedBadge.style.display = profileData.verified ? 'block' : 'none';
+                    }
+                    
+                    // Load additional data based on user type
+                    if (profileData.type === 'talent') {
+                        await loadTalentData(profileData.$id);
+                    }
+                    
+                    // Load reviews
+                    if (profileData.reviews_count > 0) {
+                        await loadReviews(profileData.$id);
+                    }
+                    
+                    // Update action buttons based on whether it's own profile
+                    updateActionButtons(isOwnProfile, profileData);
+                    
+                } else {
+                    console.warn('No profile data found');
+                    // Show default data or redirect to login
+                    window.location.href = 'login.html';
+                }
+                
+            } catch (error) {
+                console.error('Error loading profile data:', error);
+                // Fallback to default data
+            }
+        }
+        
+        async function loadTalentData(userId) {
+            try {
+                if (!window.AppwriteHelper) return;
+                
+                // Load products/services offered by this talent
+                const products = await window.AppwriteHelper.listDocuments('products', [
+                    window.AppwriteHelper.Query.equal('seller_id', userId)
+                ]);
+                
+                // Load workshops conducted by this talent
+                const workshops = await window.AppwriteHelper.listDocuments('workshops', [
+                    window.AppwriteHelper.Query.equal('instructor_id', userId)
+                ]);
+                
+                // Update portfolio section with actual products
+                if (products.documents && products.documents.length > 0) {
+                    const portfolioGrid = document.getElementById('portfolioGrid');
+                    if (portfolioGrid) {
+                        portfolioGrid.innerHTML = products.documents.map(product => `
+                            <div class="portfolio-item">
+                                <img src="${product.image || 'images/placeholder.jpg'}" alt="${product.title}" onerror="this.src='images/placeholder.jpg'">
+                                <div class="portfolio-overlay">
+                                    <h4>${product.title}</h4>
+                                    <p>${product.description.substring(0, 100)}...</p>
+                                    <span class="price">${product.price} ${product.currency}</span>
+                                </div>
+                            </div>
+                        `).join('');
+                    }
+                }
+                
+                // Update experience section with workshops
+                if (workshops.documents && workshops.documents.length > 0) {
+                    const experienceList = document.getElementById('experienceList');
+                    if (experienceList) {
+                        experienceList.innerHTML = workshops.documents.map(workshop => `
+                            <div class="experience-item">
+                                <div class="experience-header">
+                                    <h4>${workshop.title}</h4>
+                                    <span class="experience-date">${new Date(workshop.start_date).toLocaleDateString('ar-SA')} - ${new Date(workshop.end_date).toLocaleDateString('ar-SA')}</span>
+                                </div>
+                                <p>${workshop.description}</p>
+                                <div class="experience-meta">
+                                    <span>المستوى: ${workshop.level === 'beginner' ? 'مبتدئ' : workshop.level === 'intermediate' ? 'متوسط' : 'متقدم'}</span>
+                                    <span>المدة: ${workshop.duration} ${workshop.duration_unit}</span>
+                                </div>
+                            </div>
+                        `).join('');
+                    }
+                }
+                
+            } catch (error) {
+                console.error('Error loading talent data:', error);
+            }
+        }
+        
+        function updateActionButtons(isOwnProfile, profileData) {
+            const chatBtn = document.getElementById('chatBtn');
+            const requestBtn = document.getElementById('requestBtn');
+            const favoriteBtn = document.getElementById('favoriteBtn');
+            
+            if (isOwnProfile) {
+                // Hide action buttons for own profile
+                if (chatBtn) chatBtn.style.display = 'none';
+                if (requestBtn) requestBtn.style.display = 'none';
+                if (favoriteBtn) favoriteBtn.style.display = 'none';
+                
+                // Add edit profile button
+                const actionsContainer = document.querySelector('.profile-quick-actions');
+                if (actionsContainer) {
+                    const editBtn = document.createElement('button');
+                    editBtn.className = 'btn btn-secondary btn-icon-text';
+                    editBtn.innerHTML = `
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                        <span data-ar="تعديل الملف" data-en="Edit Profile">تعديل الملف</span>
+                    `;
+                    editBtn.addEventListener('click', () => {
+                        window.location.href = 'my-profile.html';
+                    });
+                    actionsContainer.appendChild(editBtn);
+                }
+            } else {
+                // Show action buttons for other profiles
+                if (chatBtn) chatBtn.style.display = 'inline-flex';
+                if (requestBtn) requestBtn.style.display = 'inline-flex';
+                if (favoriteBtn) favoriteBtn.style.display = 'inline-flex';
+            }
+        }
+        
+        function updateStarsDisplay(elementId, rating) {
+            const starsContainer = document.getElementById(elementId);
+            if (!starsContainer) return;
+            
+            starsContainer.innerHTML = generateStars(rating);
+        }
+        
+        async function loadPortfolio(portfolioUrl) {
+            const portfolioGrid = document.getElementById('portfolioGrid');
+            if (!portfolioGrid) return;
+            
+            // For now, show a placeholder. In real implementation, you'd load actual portfolio items
+            portfolioGrid.innerHTML = `
+                <div class="portfolio-item">
+                    <img src="${portfolioUrl}" alt="Portfolio item" onerror="this.style.display='none'">
+                    <div class="portfolio-overlay">
+                        <h4>عمل فني</h4>
+                        <p>وصف العمل</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateStars(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+            
+            return `
+                ${'★'.repeat(fullStars)}
+                ${hasHalfStar ? '☆' : ''}
+                ${'☆'.repeat(emptyStars)}
+            `;
+        }
+        
+        async function loadReviews(userId) {
+            try {
+                if (!window.AppwriteHelper) return;
+                
+                const reviews = await window.AppwriteHelper.listDocuments('reviews', [
+                    window.AppwriteHelper.Query.equal('reviewed_user_id', userId)
+                ]);
+                
+                const reviewsContainer = document.getElementById('reviewsList');
+                if (!reviewsContainer || !reviews.documents) return;
+                
+                reviewsContainer.innerHTML = reviews.documents.map(review => `
+                    <div class="review-item">
+                        <div class="review-header">
+                            <div class="reviewer-info">
+                                <div class="reviewer-avatar">${review.reviewer_name?.charAt(0) || 'م'}</div>
+                                <div class="reviewer-details">
+                                    <h4>${review.reviewer_name || 'مستخدم'}</h4>
+                                    <div class="review-stars">${generateStars(review.rating)}</div>
+                                </div>
+                            </div>
+                            <span class="review-date">${new Date(review.created_at).toLocaleDateString('ar-SA')}</span>
+                        </div>
+                        <p class="review-comment">${review.comment || 'لا يوجد تعليق'}</p>
+                        ${review.project_title ? `<div class="review-project">المشروع: ${review.project_title}</div>` : ''}
+                    </div>
+                `).join('');
+                
+            } catch (error) {
+                console.error('Error loading reviews:', error);
+            }
+        }
+        
+        // Initialize collapsible sections
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load profile data
+            loadProfileData();
+            
+            // Initialize collapsible sections
+            const toggles = document.querySelectorAll('.section-toggle');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const section = this.dataset.section;
+                    const content = document.getElementById(`${section}-content`);
+                    const icon = this.querySelector('.toggle-icon');
+                    
+                    if (content && icon) {
+                        content.classList.toggle('active');
+                        icon.classList.toggle('rotated');
+                    }
+                });
+            });
+            
+            // Initialize portfolio filters
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    // Implement filtering logic here
+                });
+            });
+            
+            // Initialize action buttons
+            const chatBtn = document.getElementById('chatBtn');
+            const requestBtn = document.getElementById('requestBtn');
+            const favoriteBtn = document.getElementById('favoriteBtn');
+            const shareBtn = document.getElementById('shareBtn');
+            
+            if (chatBtn) {
+                chatBtn.addEventListener('click', function() {
+                    // Implement chat functionality
+                    window.showToast('ميزة المحادثة قريباً', 'info');
+                });
+            }
+            
+            if (requestBtn) {
+                requestBtn.addEventListener('click', function() {
+                    // Implement request functionality
+                    window.showToast('ميزة إرسال الطلبات قريباً', 'info');
+                });
+            }
+            
+            if (favoriteBtn) {
+                favoriteBtn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    window.showToast('تم إضافة للمفضلة', 'success');
+                });
+            }
+            
+            if (shareBtn) {
+                shareBtn.addEventListener('click', function() {
+                    if (navigator.share) {
+                        navigator.share({
+                            title: document.title,
+                            url: window.location.href
+                        });
+                    } else {
+                        // Fallback: copy to clipboard
+                        navigator.clipboard.writeText(window.location.href);
+                        window.showToast('تم نسخ الرابط', 'success');
+                    }
+                });
+            }
+        });
+        
+        // Load header and footer
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            });
+
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+    <script src="js/footer-loader.js"></script>
+    <script src="js/profile.js"></script>
+    <script>
+        // Load footer component
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

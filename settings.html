@@ -1,0 +1,403 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعدادات - حاذق</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>حاذق</h1></a>
+                </div>
+                
+                <nav class="header-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="talents.html" data-ar="المواهب" data-en="Talents">المواهب</a></li>
+                        <li><a href="store.html" data-ar="المتجر" data-en="Store">المتجر</a></li>
+                        <li><a href="workshops.html" data-ar="الورش" data-en="Workshops">الورش</a></li>
+                        <li><a href="community.html" data-ar="المجتمع" data-en="Community">المجتمع</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="lang-toggle" id="langToggle">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="lang-text">EN</span>
+                    </button>
+                    <a href="notifications.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge" id="headerNotificationBadge" style="display: none;">0</span>
+                    </a>
+                    <a href="chat.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </a>
+                    <a href="dashboard.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <button class="menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <h2 data-ar="القائمة" data-en="Menu">القائمة</h2>
+            <button class="mobile-menu-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="index.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+                <span data-ar="الرئيسية" data-en="Home">الرئيسية</span>
+            </a>
+            <a href="settings.html" class="nav-link active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M12 1v6m0 6v6m5.2-13.2l-4.2 4.2m0 6l4.2 4.2M23 12h-6m-6 0H5m13.2 5.2l-4.2-4.2m0-6l4.2-4.2"></path>
+                </svg>
+                <span data-ar="الإعدادات" data-en="Settings">الإعدادات</span>
+            </a>
+        </nav>
+    </div>
+
+    <a href="dashboard.html" class="btn-back-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+    </a>
+
+    <!-- Settings Content -->
+    <div class="settings-wrapper">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title" data-ar="الإعدادات" data-en="Settings">الإعدادات</h1>
+                <p class="page-subtitle" data-ar="إدارة حسابك وتفضيلاتك" data-en="Manage your account and preferences">إدارة حسابك وتفضيلاتك</p>
+            </div>
+
+            <div class="settings-grid">
+                <!-- Settings Sidebar -->
+                <aside class="settings-sidebar">
+                    <nav class="settings-nav">
+                        <a href="#account" class="settings-nav-item active" data-section="account">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span data-ar="الحساب" data-en="Account">الحساب</span>
+                        </a>
+                        <a href="#privacy" class="settings-nav-item" data-section="privacy">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <span data-ar="الخصوصية" data-en="Privacy">الخصوصية</span>
+                        </a>
+                        <a href="#notifications" class="settings-nav-item" data-section="notifications">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                            <span data-ar="الإشعارات" data-en="Notifications">الإشعارات</span>
+                        </a>
+                        <a href="#appearance" class="settings-nav-item" data-section="appearance">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"></circle>
+                                <line x1="12" y1="1" x2="12" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="23"></line>
+                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                <line x1="1" y1="12" x2="3" y2="12"></line>
+                                <line x1="21" y1="12" x2="23" y2="12"></line>
+                                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                            </svg>
+                            <span data-ar="المظهر" data-en="Appearance">المظهر</span>
+                        </a>
+                        <a href="#social" class="settings-nav-item" data-section="social">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                            <span data-ar="الحسابات الاجتماعية" data-en="Social Accounts">الحسابات الاجتماعية</span>
+                        </a>
+                        <a href="#security" class="settings-nav-item" data-section="security">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                            <span data-ar="الأمان" data-en="Security">الأمان</span>
+                        </a>
+                    </nav>
+                </aside>
+
+                <!-- Settings Content -->
+                <div class="settings-content">
+                    <!-- Account Section -->
+                    <section class="settings-section active" id="account">
+                        <h2 data-ar="إعدادات الحساب" data-en="Account Settings">إعدادات الحساب</h2>
+                        
+                        <div class="setting-group">
+                            <label data-ar="الاسم الكامل" data-en="Full Name">الاسم الكامل</label>
+                            <input type="text" value="أحمد المعمري" class="setting-input">
+                        </div>
+
+                        <div class="setting-group">
+                            <label data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني</label>
+                            <input type="email" value="ahmed@example.com" class="setting-input">
+                        </div>
+
+                        <div class="setting-group">
+                            <label data-ar="رقم الهاتف" data-en="Phone Number">رقم الهاتف</label>
+                            <input type="tel" value="+968 9123 4567" class="setting-input">
+                        </div>
+
+                        <div class="setting-group">
+                            <label data-ar="السيرة الذاتية" data-en="Bio">السيرة الذاتية</label>
+                            <textarea class="setting-textarea" rows="4">مصمم جرافيك محترف مع خبرة 5 سنوات</textarea>
+                        </div>
+
+                        <button class="btn btn-primary" data-ar="حفظ التغييرات" data-en="Save Changes">حفظ التغييرات</button>
+                    </section>
+
+                    <!-- Privacy Section -->
+                    <section class="settings-section" id="privacy">
+                        <h2 data-ar="إعدادات الخصوصية" data-en="Privacy Settings">إعدادات الخصوصية</h2>
+                        
+                        <div class="setting-toggle">
+                            <div class="toggle-info">
+                                <h3 data-ar="إظهار الملف الشخصي" data-en="Show Profile">إظهار الملف الشخصي</h3>
+                                <p data-ar="السماح للآخرين بمشاهدة ملفك الشخصي" data-en="Allow others to view your profile">السماح للآخرين بمشاهدة ملفك الشخصي</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-toggle">
+                            <div class="toggle-info">
+                                <h3 data-ar="إظهار البريد الإلكتروني" data-en="Show Email">إظهار البريد الإلكتروني</h3>
+                                <p data-ar="عرض بريدك الإلكتروني في الملف العام" data-en="Display your email in public profile">عرض بريدك الإلكتروني في الملف العام</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-toggle">
+                            <div class="toggle-info">
+                                <h3 data-ar="إظهار رقم الهاتف" data-en="Show Phone">إظهار رقم الهاتف</h3>
+                                <p data-ar="عرض رقم هاتفك في الملف العام" data-en="Display your phone in public profile">عرض رقم هاتفك في الملف العام</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Notifications Section -->
+                    <section class="settings-section" id="notifications">
+                        <h2 data-ar="إعدادات الإشعارات" data-en="Notification Settings">إعدادات الإشعارات</h2>
+                        
+                        <div class="setting-toggle">
+                            <div class="toggle-info">
+                                <h3 data-ar="إشعارات البريد الإلكتروني" data-en="Email Notifications">إشعارات البريد الإلكتروني</h3>
+                                <p data-ar="تلقي الإشعارات عبر البريد الإلكتروني" data-en="Receive notifications via email">تلقي الإشعارات عبر البريد الإلكتروني</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-toggle">
+                            <div class="toggle-info">
+                                <h3 data-ar="إشعارات الرسائل" data-en="Message Notifications">إشعارات الرسائل</h3>
+                                <p data-ar="إشعار عند استلام رسالة جديدة" data-en="Notify when receiving new message">إشعار عند استلام رسالة جديدة</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div class="setting-toggle">
+                            <div class="toggle-info">
+                                <h3 data-ar="إشعارات الطلبات" data-en="Order Notifications">إشعارات الطلبات</h3>
+                                <p data-ar="إشعار عند استلام طلب جديد" data-en="Notify when receiving new order">إشعار عند استلام طلب جديد</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </section>
+
+                    <!-- Appearance Section -->
+                    <section class="settings-section" id="appearance">
+                        <h2 data-ar="إعدادات المظهر" data-en="Appearance Settings">إعدادات المظهر</h2>
+                        
+                        <div class="setting-group">
+                            <label data-ar="المظهر" data-en="Theme">المظهر</label>
+                            <div class="theme-options">
+                                <div class="theme-option active" data-theme="light">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="5"></circle>
+                                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                    </svg>
+                                    <span data-ar="فاتح" data-en="Light">فاتح</span>
+                                </div>
+                                <div class="theme-option" data-theme="dark">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                    </svg>
+                                    <span data-ar="داكن" data-en="Dark">داكن</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="setting-group">
+                            <label data-ar="اللغة" data-en="Language">اللغة</label>
+                            <select class="setting-select">
+                                <option value="ar" data-ar="العربية" data-en="Arabic">العربية</option>
+                                <option value="en" data-ar="الإنجليزية" data-en="English">الإنجليزية</option>
+                            </select>
+                        </div>
+                    </section>
+
+                    <!-- Social Accounts Section -->
+                    <section class="settings-section" id="social">
+                        <h2 data-ar="الحسابات الاجتماعية" data-en="Social Accounts">الحسابات الاجتماعية</h2>
+                        
+                        <div class="social-account">
+                            <div class="social-info">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#1DA1F2" stroke="none">
+                                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                                </svg>
+                                <div>
+                                    <h3>Twitter</h3>
+                                    <p data-ar="غير متصل" data-en="Not connected">غير متصل</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm" data-ar="ربط" data-en="Connect">ربط</button>
+                        </div>
+
+                        <div class="social-account">
+                            <div class="social-info">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#E4405F" stroke="none">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="white" stroke-width="2"></line>
+                                </svg>
+                                <div>
+                                    <h3>Instagram</h3>
+                                    <p data-ar="غير متصل" data-en="Not connected">غير متصل</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm" data-ar="ربط" data-en="Connect">ربط</button>
+                        </div>
+
+                        <div class="social-account">
+                            <div class="social-info">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#0A66C2" stroke="none">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                                </svg>
+                                <div>
+                                    <h3>LinkedIn</h3>
+                                    <p data-ar="غير متصل" data-en="Not connected">غير متصل</p>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline btn-sm" data-ar="ربط" data-en="Connect">ربط</button>
+                        </div>
+                    </section>
+
+                    <!-- Security Section -->
+                    <section class="settings-section" id="security">
+                        <h2 data-ar="إعدادات الأمان" data-en="Security Settings">إعدادات الأمان</h2>
+                        
+                        <div class="setting-group">
+                            <label data-ar="كلمة المرور الحالية" data-en="Current Password">كلمة المرور الحالية</label>
+                            <input type="password" class="setting-input">
+                        </div>
+
+                        <div class="setting-group">
+                            <label data-ar="كلمة المرور الجديدة" data-en="New Password">كلمة المرور الجديدة</label>
+                            <input type="password" class="setting-input">
+                        </div>
+
+                        <div class="setting-group">
+                            <label data-ar="تأكيد كلمة المرور" data-en="Confirm Password">تأكيد كلمة المرور</label>
+                            <input type="password" class="setting-input">
+                        </div>
+
+                        <button class="btn btn-primary" data-ar="تغيير كلمة المرور" data-en="Change Password">تغيير كلمة المرور</button>
+
+                        <div class="danger-zone">
+                            <h3 data-ar="منطقة الخطر" data-en="Danger Zone">منطقة الخطر</h3>
+                            <button class="btn btn-outline" style="border-color: var(--error-color); color: var(--error-color);" data-ar="حذف الحساب" data-en="Delete Account">حذف الحساب</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/footer-loader.js"></script>
+    <script src="js/settings.js"></script>
+    <script>
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

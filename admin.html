@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم الأدمن - حاذق</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><h1>حاذق</h1></a>
+                    <span class="admin-badge" data-ar="أدمن" data-en="Admin">أدمن</span>
+                </div>
+                
+                <nav class="header-nav">
+                    <ul class="nav-links">
+                        <li><a href="admin.html" class="active" data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</a></li>
+                        <li><a href="index.html" data-ar="المنصة" data-en="Platform">المنصة</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-actions">
+                    <button class="lang-toggle" id="langToggle">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                        <span class="lang-text">EN</span>
+                    </button>
+                    <a href="notifications.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <span class="notification-badge" id="headerNotificationBadge" style="display: none;">0</span>
+                    </a>
+                    <a href="dashboard.html" class="icon-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <button class="menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <h2 data-ar="القائمة" data-en="Menu">القائمة</h2>
+            <button class="mobile-menu-close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="admin.html" class="nav-link active">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                    <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                    <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                    <rect x="3" y="16" width="7" height="5" rx="1"></rect>
+                </svg>
+                <span data-ar="لوحة التحكم" data-en="Dashboard">لوحة التحكم</span>
+            </a>
+            <a href="index.html" class="nav-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+                <span data-ar="المنصة" data-en="Platform">المنصة</span>
+            </a>
+        </nav>
+        <div class="menu-actions">
+            <a href="index.html" class="btn btn-outline" data-ar="تسجيل الخروج" data-en="Logout">تسجيل الخروج</a>
+        </div>
+    </div>
+
+    <!-- Admin Dashboard Content -->
+    <div class="admin-wrapper">
+        <div class="container">
+            <!-- Welcome Section -->
+            <div class="admin-welcome">
+                <div class="welcome-content">
+                    <h1 data-ar="مرحباً بك في لوحة التحكم" data-en="Welcome to Admin Dashboard">مرحباً بك في لوحة التحكم</h1>
+                    <p data-ar="إدارة شاملة لمنصة حاذق" data-en="Comprehensive management of Sayt platform">إدارة شاملة لمنصة حاذق</p>
+                </div>
+                <div class="admin-actions">
+                    <button class="btn btn-primary" id="addUserBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <line x1="20" y1="8" x2="20" y2="14"></line>
+                            <line x1="23" y1="11" x2="17" y2="11"></line>
+                        </svg>
+                        <span data-ar="إضافة مستخدم" data-en="Add User">إضافة مستخدم</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats Overview -->
+            <div class="admin-stats-grid">
+                <div class="admin-stat-card">
+                    <div class="stat-icon" style="background: rgba(33, 56, 81, 0.1); color: #213851;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3 data-ar="إجمالي المستخدمين" data-en="Total Users">إجمالي المستخدمين</h3>
+                        <p class="stat-number">2,547</p>
+                        <span class="stat-change positive">+12% هذا الشهر</span>
+                    </div>
+                </div>
+
+                <div class="admin-stat-card">
+                    <div class="stat-icon" style="background: rgba(161, 124, 26, 0.1); color: #ec4899;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3 data-ar="المواهب النشطة" data-en="Active Talents">المواهب النشطة</h3>
+                        <p class="stat-number">1,234</p>
+                        <span class="stat-change positive">+8% هذا الشهر</span>
+                    </div>
+                </div>
+
+                <div class="admin-stat-card">
+                    <div class="stat-icon" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3 data-ar="المنتجات" data-en="Products">المنتجات</h3>
+                        <p class="stat-number">456</p>
+                        <span class="stat-change positive">+15 جديد</span>
+                    </div>
+                </div>
+
+                <div class="admin-stat-card">
+                    <div class="stat-icon" style="background: rgba(16, 185, 129, 0.1); color: #10b981;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <div class="stat-info">
+                        <h3 data-ar="الورش" data-en="Workshops">الورش</h3>
+                        <p class="stat-number">89</p>
+                        <span class="stat-change">23 قادمة</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="admin-grid">
+                <!-- Left Column -->
+                <div class="admin-main">
+                    <!-- Users Management -->
+                    <div class="admin-section">
+                        <div class="section-header">
+                            <h2 data-ar="إدارة المستخدمين" data-en="Users Management">إدارة المستخدمين</h2>
+                            <div class="section-actions">
+                                <input type="text" class="search-input" placeholder="بحث..." id="userSearch">
+                                <select class="filter-select" id="userFilter">
+                                    <option value="all" data-ar="الكل" data-en="All">الكل</option>
+                                    <option value="talents" data-ar="مواهب" data-en="Talents">مواهب</option>
+                                    <option value="clients" data-ar="عملاء" data-en="Clients">عملاء</option>
+                                    <option value="pending" data-ar="قيد المراجعة" data-en="Pending">قيد المراجعة</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="users-table-wrapper">
+                            <table class="admin-table" id="usersTable">
+                                <thead>
+                                    <tr>
+                                        <th data-ar="المستخدم" data-en="User">المستخدم</th>
+                                        <th data-ar="النوع" data-en="Type">النوع</th>
+                                        <th data-ar="الحالة" data-en="Status">الحالة</th>
+                                        <th data-ar="تاريخ التسجيل" data-en="Join Date">تاريخ التسجيل</th>
+                                        <th data-ar="الإجراءات" data-en="Actions">الإجراءات</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usersTableBody">
+                                    <!-- Users will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Categories Management -->
+                    <div class="admin-section">
+                        <div class="section-header">
+                            <h2 data-ar="إدارة التصنيفات" data-en="Categories Management">إدارة التصنيفات</h2>
+                            <button class="btn btn-outline btn-sm" id="addCategoryBtn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 5v14M5 12h14"></path>
+                                </svg>
+                                <span data-ar="إضافة تصنيف" data-en="Add Category">إضافة تصنيف</span>
+                            </button>
+                        </div>
+                        <div class="categories-grid" id="categoriesGrid">
+                            <!-- Categories will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Reports Section -->
+                    <div class="admin-section">
+                        <div class="section-header">
+                            <h2 data-ar="البلاغات والشكاوى" data-en="Reports & Complaints">البلاغات والشكاوى</h2>
+                            <span class="badge badge-warning" id="reportsCount">12</span>
+                        </div>
+                        <div class="reports-list" id="reportsList">
+                            <!-- Reports will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar -->
+                <aside class="admin-sidebar">
+                    <!-- Quick Stats -->
+                    <div class="sidebar-card">
+                        <h3 data-ar="إحصائيات سريعة" data-en="Quick Stats">إحصائيات سريعة</h3>
+                        <div class="quick-stats">
+                            <div class="quick-stat-item">
+                                <span class="stat-label" data-ar="مستخدمين جدد اليوم" data-en="New Users Today">مستخدمين جدد اليوم</span>
+                                <span class="stat-value">24</span>
+                            </div>
+                            <div class="quick-stat-item">
+                                <span class="stat-label" data-ar="طلبات قيد المراجعة" data-en="Pending Requests">طلبات قيد المراجعة</span>
+                                <span class="stat-value">8</span>
+                            </div>
+                            <div class="quick-stat-item">
+                                <span class="stat-label" data-ar="منتجات جديدة" data-en="New Products">منتجات جديدة</span>
+                                <span class="stat-value">15</span>
+                            </div>
+                            <div class="quick-stat-item">
+                                <span class="stat-label" data-ar="ورش هذا الأسبوع" data-en="Workshops This Week">ورش هذا الأسبوع</span>
+                                <span class="stat-value">5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="sidebar-card">
+                        <h3 data-ar="النشاط الأخير" data-en="Recent Activity">النشاط الأخير</h3>
+                        <div class="activity-list" id="adminActivityList">
+                            <!-- Activity will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- System Status -->
+                    <div class="sidebar-card">
+                        <h3 data-ar="حالة النظام" data-en="System Status">حالة النظام</h3>
+                        <div class="system-status">
+                            <div class="status-item">
+                                <div class="status-indicator active"></div>
+                                <span data-ar="الخادم" data-en="Server">الخادم</span>
+                                <span class="status-text" data-ar="نشط" data-en="Active">نشط</span>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-indicator active"></div>
+                                <span data-ar="قاعدة البيانات" data-en="Database">قاعدة البيانات</span>
+                                <span class="status-text" data-ar="نشط" data-en="Active">نشط</span>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-indicator active"></div>
+                                <span data-ar="التخزين" data-en="Storage">التخزين</span>
+                                <span class="status-text">78%</span>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script src="js/main.js"></script>
+    <script src="js/footer-loader.js"></script>
+    <script src="js/admin.js"></script>
+    <script>
+        // Load footer component
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html>

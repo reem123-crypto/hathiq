@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب - حاذق</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-card">
+            <a href="index.html" class="auth-back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>العودة للرئيسية</span>
+            </a>
+            <div class="auth-header">
+                <a href="index.html" class="auth-logo"><h1>حاذق</h1></a>
+                <h2>إنشاء حساب جديد</h2>
+                <p>انضم إلى منصة حاذق وابدأ رحلتك</p>
+            </div>
+            <form class="auth-form" id="registerForm">
+                <!-- Account Type Selection -->
+                <div class="account-type-section">
+                    <label class="section-label">نوع الحساب</label>
+                    <div class="account-type-cards">
+                        <div class="account-type-card" data-type="client">
+                            <div class="account-type-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="12" cy="7" r="4"></circle>
+                                </svg>
+                            </div>
+                            <h3>مستفيد</h3>
+                            <p>أبحث عن مواهب وخدمات</p>
+                        </div>
+                        <div class="account-type-card" data-type="talent">
+                            <div class="account-type-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                                </svg>
+                            </div>
+                            <h3>موهوب</h3>
+                            <p>أقدم خدماتي ومواهبي</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Basic Information (Always visible) -->
+                <div class="form-section" id="basicInfo">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">الاسم الأول</label>
+                            <input id="firstName" type="text" name="firstName" autocomplete="given-name" required placeholder="الاسم">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">اسم العائلة</label>
+                            <input id="lastName" type="text" name="lastName" autocomplete="family-name" required placeholder="القبيلة">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail">البريد الإلكتروني</label>
+                        <input id="registerEmail" type="email" name="email" autocomplete="email" required placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input id="phone" type="tel" name="phone" autocomplete="tel" required placeholder="+968 9X XXX XXX">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="registerPassword">كلمة المرور</label>
+                            <input id="registerPassword" type="password" name="password" autocomplete="new-password" required minlength="8" placeholder="8 أحرف على الأقل">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">تأكيد كلمة المرور</label>
+                            <input id="confirmPassword" type="password" name="confirmPassword" autocomplete="new-password" required minlength="8" placeholder="8 أحرف على الأقل">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Talent Additional Information (Only for talents) -->
+                <div class="form-section hidden" id="talentInfo">
+                    <div class="section-divider">
+                        <span>معلومات الموهوب</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">المجال</label>
+                        <select id="category" name="category" autocomplete="organization-title" required>
+                            <option value="">اختر مجالك</option>
+                            <option value="photography">التصوير</option>
+                            <option value="design">التصميم</option>
+                            <option value="writing">الكتابة</option>
+                            <option value="programming">البرمجة</option>
+                            <option value="marketing">التسويق</option>
+                            <option value="video">المونتاج والفيديو</option>
+                            <option value="voice">التعليق الصوتي</option>
+                            <option value="translation">الترجمة</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bio">نبذة تعريفية</label>
+                        <textarea id="bio" name="bio" rows="3" autocomplete="off" placeholder="اكتب نبذة مختصرة عن خبراتك ومهاراتك..."></textarea>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="experience">سنوات الخبرة</label>
+                            <input id="experience" type="number" name="experience" autocomplete="off" min="0" placeholder="مثال: 3">
+                        </div>
+                        <div class="form-group">
+                            <label for="city">المدينة</label>
+                            <input id="city" type="text" name="city" autocomplete="address-level2" placeholder="مسقط">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="portfolio">رابط معرض الأعمال (اختياري)</label>
+                        <input id="portfolio" type="url" name="portfolio" autocomplete="url" placeholder="https://...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>السيرة الذاتية (PDF)</label>
+                        <div class="file-upload-area">
+                            <input type="file" name="cv" id="cvFile" accept=".pdf" hidden>
+                            <label for="cvFile" class="file-upload-label">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <span>اضغط لرفع السيرة الذاتية</span>
+                            </label>
+                            <div class="file-name" id="cvFileName"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>صورة شخصية</label>
+                        <div class="file-upload-area">
+                            <input type="file" name="photo" id="photoFile" accept="image/*" hidden>
+                            <label for="photoFile" class="file-upload-label">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                    <polyline points="21 15 16 10 5 21"></polyline>
+                                </svg>
+                                <span>اضغط لرفع صورة شخصية</span>
+                            </label>
+                            <div class="file-name" id="photoFileName"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-label">
+                        <input type="checkbox" required>
+                        <span>أوافق على <a href="#" class="link">الشروط والأحكام</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">إنشاء الحساب</button>
+            </form>
+            <div class="auth-footer">
+                <p>لديك حساب بالفعل؟ <a href="login.html" class="link">تسجيل الدخول</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <script src="js/appwrite-helper.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        // Load footer safely
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('components/footer.html')
+                .then(response => {
+                    if (!response.ok) throw new Error('Failed to load footer');
+                    return response.text();
+                })
+                .then(data => {
+                    const footer = document.getElementById('footer-container');
+                    if (footer) footer.innerHTML = data;
+                })
+                .catch(error => {
+                    console.warn('Footer loading error:', error);
+                    // Continue without footer
+                });
+        });
+    </script>
+</body>
+</html>
