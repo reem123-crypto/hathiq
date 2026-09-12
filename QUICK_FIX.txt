@@ -1,0 +1,86 @@
+# ⚡ خطوات إصلاح سريعة جداً (2 دقيقة)
+
+## الخطوة 1: اذهب إلى Appwrite Console
+```
+https://cloud.appwrite.io
+```
+
+## الخطوة 2: انسخ Project ID
+```
+1. Settings (أسفل يمين)
+2. اختر Project
+3. انسخ Project ID
+```
+
+## الخطوة 3: انسخ Database ID
+```
+1. Databases
+2. اختر قاعدتك (أو اضغط + لإنشاء واحدة)
+3. انسخ Database ID
+```
+
+## الخطوة 4: افتح الملف
+```
+frontend/js/appwrite-helper.js
+```
+
+## الخطوة 5: غيّر السطور 7-9
+```javascript
+// استبدل هذا:
+const APPWRITE_ENDPOINT = 'https://fra.cloud.appwrite.io/v1';
+const APPWRITE_PROJECT_ID = '6a01a17c0019070903f1';        ← غيّر هذا
+const APPWRITE_DATABASE_ID = 'default';                     ← غيّر هذا
+
+// بهذا:
+const APPWRITE_ENDPOINT = 'https://fra.cloud.appwrite.io/v1';
+const APPWRITE_PROJECT_ID = 'YOUR_PROJECT_ID_HERE';          ← ألصق قيمتك
+const APPWRITE_DATABASE_ID = 'YOUR_DATABASE_ID_HERE';        ← ألصق قيمتك
+```
+
+## الخطوة 6: تأكد من وجود Collection
+```
+في Appwrite:
+1. Databases → قاعدتك
+2. ابحث عن Collection باسم 'users'
+3. إذا لم توجد:
+   - اضغط + Create Collection
+   - اسم: users
+   - اضغط Create
+4. اضغط على users → Settings → Permissions
+5. اضغط + Add Permission
+6. اختر: Any + All Permissions
+7. اضغط Add
+```
+
+## الخطوة 7: جرّب الآن!
+```
+1. افتح المتصفح
+2. اضغط F12 (Console)
+3. حاول التسجيل
+4. ابحث عن رسائل خضراء ✅
+```
+
+## ✅ تم! 🎉
+
+إذا رأيت رسائل خضراء في Console، نجح كل شيء!
+
+---
+
+## إذا لم ينجح
+
+### ابحث عن الرسالة الحمراء في Console
+```
+❌ "Project not found" → PROJECT_ID خطأ
+❌ "Database not found" → DATABASE_ID خطأ
+❌ "Collection not found" → انشئ Collection
+❌ "Permission denied" → أضف Permissions
+```
+
+### اقرأ الملف التفصيلي
+```
+APPWRITE_TROUBLESHOOTING.md
+```
+
+---
+
+**هذا كل شيء! سهل جداً! 💪**

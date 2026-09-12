@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تشغيل منصة حاذق</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #213851 0%, #213851 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            color: #213851;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .status {
+            background: #f0f9ff;
+            border: 2px solid #213851;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .status-label {
+            font-weight: 600;
+            color: #213851;
+        }
+
+        .status-value {
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .status-ok {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            margin: 0.5rem;
+            background: #213851;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #4AB89E;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(93, 204, 180, 0.3);
+        }
+
+        .btn-secondary {
+            background: #213851;
+        }
+
+        .btn-secondary:hover {
+            background: #2D5270;
+        }
+
+        .info {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 12px;
+            padding: 1rem;
+            margin-top: 2rem;
+            text-align: right;
+        }
+
+        .info-title {
+            font-weight: 600;
+            color: #856404;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-text {
+            color: #856404;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .checking {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🌟</div>
+        <h1>منصة حاذق</h1>
+        <p class="subtitle">منصة رقمية لتنظيم وتمكين المواهب العمانية</p>
+
+        <div class="status">
+            <div class="status-item">
+                <span class="status-label">Frontend</span>
+                <span class="status-value status-ok">✓ جاهز</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Data (JSON)</span>
+                <span class="status-value status-ok">✓ جاهز</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Backend (PHP)</span>
+                <span class="status-value status-error" id="backend-status">✗ غير متوفر</span>
+            </div>
+        </div>
+
+        <div>
+            <a href="frontend/index.html" class="btn">
+                🚀 تشغيل المنصة
+            </a>
+            <a href="backend/test-api.html" class="btn btn-secondary">
+                🧪 اختبار API
+            </a>
+        </div>
+
+        <div class="info">
+            <div class="info-title">📌 ملاحظة مهمة:</div>
+            <div class="info-text">
+                • المنصة تعمل الآن مع البيانات من ملفات JSON<br>
+                • لتشغيل Backend، تحتاج تثبيت PHP و MySQL<br>
+                • راجع ملف QUICK_START.md للتعليمات الكاملة<br>
+                • جميع الميزات متاحة بدون Backend
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check backend availability
+        async function checkBackend() {
+            try {
+                const response = await fetch('http://localhost:8000/api/categories.php');
+                if (response.ok) {
+                    document.getElementById('backend-status').textContent = '✓ يعمل';
+                    document.getElementById('backend-status').className = 'status-value status-ok';
+                }
+            } catch (error) {
+                // Backend not available, that's ok
+            }
+        }
+
+        checkBackend();
+    </script>
+</body>
+</html>
